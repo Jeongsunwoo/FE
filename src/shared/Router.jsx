@@ -7,6 +7,7 @@ import Signup from "../components/Signup";
 import PostingPage from "../pages/PostingPage";
 import WineListPage from "../pages/WineListPage";
 import DetailPage from "../pages/DetailPage";
+import styled from "../styles/css/app.module.css";
 
 function Router() {
   return (

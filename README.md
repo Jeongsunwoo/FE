@@ -20,7 +20,7 @@
 
 ### 패키지 설치
 
-1. 상태 관리 : redux-toolkit
+1. 상태 관리 : redux-toolkit, react-query
 2. Routing : react-router-dom
 3. 데이터 통신 : axios
 4. mock-server : JSON-server
@@ -29,6 +29,7 @@
 ```
 yarn add global sass
 yarn add redux react-redux
+yarn add react-query
 yarn add react-router-dom
 yarn add @reduxjs/toolkit
 yarn add axios
