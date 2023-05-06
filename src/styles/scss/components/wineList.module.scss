@@ -1,0 +1,11 @@
+@import "../base/variables";
+
+.listCon {
+  @include wrap;
+  border-top: 1px solid #ccc;
+  padding: 3% 0;
+
+  .list {
+    width: 100%;
+  }
+}

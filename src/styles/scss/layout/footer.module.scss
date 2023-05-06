@@ -1,0 +1,28 @@
+@import "../base/variables";
+
+.footerCon {
+  width: 100%;
+  background-color: $bgColor-footer-light-gray;
+
+  .innerCon {
+    @include wrap;
+    margin: 0 auto;
+    padding: 5% 0;
+
+    .contents {
+      width: 100%;
+
+      p {
+        padding: 3px 0;
+      }
+
+      .title {
+        font-weight: 600;
+      }
+
+      .text {
+        font-size: 0.9rem;
+      }
+    }
+  }
+}

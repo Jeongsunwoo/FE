@@ -7,6 +7,7 @@ import Signup from "../components/Signup";
 import PostingPage from "../pages/PostingPage";
 import WineListPage from "../pages/WineListPage";
 import DetailPage from "../pages/DetailPage";
+import Footer from "../components/Footer";
 import styled from "../styles/css/app.module.css";
 
 function Router() {
@@ -18,10 +19,11 @@ function Router() {
           <Route path="/account/login" element={<Login />}></Route>
           <Route path="/account/signup" element={<Signup />}></Route>
         </Route>
-        <Route path="/posting" element={<WineListPage />}></Route>
-        <Route path="/" element={<DetailPage />}></Route>
-        <Route path="/" element={<PostingPage />}></Route>
+        <Route path="/wineList" element={<WineListPage />}></Route>
+        <Route path="/detail" element={<DetailPage />}></Route>
+        <Route path="/posting" element={<PostingPage />}></Route>
       </Routes>
+      <Footer></Footer>
     </BrowserRouter>
   );
 }
