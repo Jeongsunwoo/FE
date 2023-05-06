@@ -1,0 +1,25 @@
+// color
+$color-white-purple: #dae0f6;
+$color-light-purple: #a879e3;
+
+// fonts
+$font-roboto: "Noto Sans KR", sans-serif;
+$font-notoSans: "Noto Sans KR", sans-serif;
+$font-playFair: "Playfair Display", serif;
+
+// mixin
+@mixin flex-justify-center {
+  display: flex;
+  justify-content: center;
+}
+
+@mixin flex-space-between {
+  display: flex;
+  justify-content: space-between;
+}
+
+@mixin flex-all-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
