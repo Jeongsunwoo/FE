@@ -1,0 +1,14 @@
+@import "../base/variables";
+
+.wrap {
+  @include wrap;
+  margin: 0 auto;
+  padding: 0;
+
+  .banner {
+    width: 100%;
+    height: 300px;
+    text-align: center;
+    border: 1px solid;
+  }
+}

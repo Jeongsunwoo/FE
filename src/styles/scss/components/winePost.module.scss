@@ -1,0 +1,78 @@
+@import "../base/variables";
+
+.postCon {
+  @include flex-space-between;
+  align-items: center;
+  width: 100%;
+  height: 300px;
+  margin-bottom: 3%;
+  box-shadow: $shadow1;
+  transition: all 0.3s;
+  cursor: pointer;
+
+  &:hover {
+    transform: scale(1.02);
+  }
+
+  .imgCon {
+    @include flex-all-center;
+    width: 500px;
+    height: 100%;
+  }
+  .detailCon {
+    width: 60%;
+    height: 100%;
+    padding: 5% 5%;
+    background-color: $bgColor-light-beige;
+
+    .name {
+      display: inline-block;
+      font-size: 1.1rem;
+      font-weight: 600;
+      padding-bottom: 2%;
+      margin-bottom: 3%;
+      border-bottom: 1px solid #ccc;
+    }
+
+    .infoCon {
+      line-height: 2rem;
+      display: flex;
+      justify-content: start;
+
+      .title {
+        font-size: 1rem;
+        font-weight: 600;
+        margin-right: 3%;
+      }
+    }
+
+    p {
+      margin-bottom: 1%;
+    }
+  }
+
+  .review {
+    @include flex-all-center;
+    height: 100%;
+    padding: 3% 0;
+    background-color: #000;
+    text-align: center;
+    transition: all 0.3s;
+    box-sizing: border-box;
+    cursor: pointer;
+
+    a {
+      color: #fff;
+      transition: all 0.3s;
+    }
+
+    &:hover {
+      background-color: $color--wine;
+      color: #fff;
+    }
+
+    &:hover a {
+      transform: translateY(-10px);
+    }
+  }
+}

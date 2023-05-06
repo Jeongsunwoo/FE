@@ -8,6 +8,10 @@
   font-family: $font-roboto;
 }
 
+a {
+  text-decoration: none;
+}
+
 ul,
 li {
   list-style: none;
@@ -15,6 +19,12 @@ li {
 
 button,
 input {
+  border: none;
+  outline: none;
   background-color: transparent;
+}
+
+button {
   cursor: pointer;
+  box-shadow: $shadow1;
 }
