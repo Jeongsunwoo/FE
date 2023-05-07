@@ -21,7 +21,6 @@ function DetailPage() {
   return (
     <>
       <div className={styled.wrap}>
-        <div className={styled.line}></div>
         <WinePost detailActive={true} post={post}></WinePost>
         <div className={styled.postingCon}>
           <button className={styled.postingBtn}>리뷰 작성하기</button>

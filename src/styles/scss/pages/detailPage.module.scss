@@ -2,24 +2,21 @@
 
 .wrap {
   @include wrap;
+  padding: 5% 0;
   height: auto;
-
-  .line {
-    @include line;
-  }
 
   .postingCon {
     width: 100%;
     display: flex;
     justify-content: end;
-    padding: 3% 0;
-    border: 1px solid;
+    padding: 1% 0;
 
     .postingBtn {
       @include button-black;
-      width: 100px;
-      line-height: 2rem;
+      width: 200px;
+      line-height: 3rem;
       margin-right: 3%;
+      font-size: 1.1rem;
     }
   }
 }
