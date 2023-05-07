@@ -1,0 +1,24 @@
+// mixin
+@mixin button {
+  cursor: pointer;
+  padding: 3px 10px;
+  text-decoration-line: none;
+  font-family: $font-roboto;
+  font-size: 25px;
+  border: 1px;
+  border-radius: 8px;
+  border-style: solid;
+  border-color: #800200;
+  background-color: transparent;
+
+  -moz-transition: background, 0.8s;
+  -o-transition: background, 0.8s;
+  -webkit-transition: background, 0.8s;
+  transition: background, 0.8s;
+
+  &:hover
+  {
+    background-color:#800200;
+    color: white;
+  }
+}
