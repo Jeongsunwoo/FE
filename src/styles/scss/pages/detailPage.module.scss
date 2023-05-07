@@ -1,0 +1,25 @@
+@import "../base/variables";
+
+.wrap {
+  @include wrap;
+  height: auto;
+
+  .line {
+    @include line;
+  }
+
+  .postingCon {
+    width: 100%;
+    display: flex;
+    justify-content: end;
+    padding: 3% 0;
+    border: 1px solid;
+
+    .postingBtn {
+      @include button-black;
+      width: 100px;
+      line-height: 2rem;
+      margin-right: 3%;
+    }
+  }
+}

@@ -20,7 +20,7 @@ function Router() {
           <Route path="/account/signup" element={<Signup />}></Route>
         </Route>
         <Route path="/wineList" element={<WineListPage />}></Route>
-        <Route path="/detail" element={<DetailPage />}></Route>
+        <Route path="/wineList/:id" element={<DetailPage />}></Route>
         <Route path="/posting" element={<PostingPage />}></Route>
       </Routes>
       <Footer></Footer>
