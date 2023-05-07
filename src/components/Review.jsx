@@ -1,4 +1,3 @@
-import React from "react";
 import styled from "../styles/css/review.module.css";
 import { BsPersonFill } from "react-icons/bs";
 

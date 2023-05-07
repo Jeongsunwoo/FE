@@ -2,8 +2,16 @@
 
 .wrap {
   @include wrap;
-  padding: 5% 0;
+  padding: 2% 0;
   height: auto;
+
+  .title {
+    margin: 5% 2%;
+    font-size: 3rem;
+    font-weight: 900;
+    font-family: $font-playFair;
+    text-shadow: $shadow2;
+  }
 
   .postingCon {
     width: 100%;
@@ -18,5 +26,9 @@
       margin-right: 3%;
       font-size: 1.1rem;
     }
+  }
+
+  .line {
+    @include line;
   }
 }

@@ -3,7 +3,7 @@
 .reviewCon {
   width: 100%;
   padding: 5%;
-  margin: 5% auto;
+  margin: 3% auto;
   background-color: $bgColor-light-beige;
   box-shadow: $shadow1;
   border-radius: 30px;
@@ -35,8 +35,5 @@
   .title {
     margin-bottom: 2%;
     color: $color--dark-grey;
-  }
-
-  .comment {
   }
 }

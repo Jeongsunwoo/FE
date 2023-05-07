@@ -8,9 +8,24 @@
   transition: all 0.3s;
   box-shadow: $shadow1;
   cursor: pointer;
+  position: relative;
 
   &:hover {
     transform: scale(1.02);
+  }
+
+  .likeCon {
+    position: absolute;
+    left: 10px;
+    bottom: 30px;
+    display: flex;
+    align-items: center;
+
+    .like {
+      font-size: 1.3rem;
+      font-weight: 600;
+      margin-left: 2px;
+    }
   }
 
   .leftCon {
