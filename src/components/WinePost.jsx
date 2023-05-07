@@ -13,10 +13,7 @@ function WinePost({ detailActive, post }) {
   };
 
   return (
-    <div
-      className={styled.postCon}
-      onClick={() => navigate(`/wineList/${post.id}`)}
-    >
+    <div className={styled.postCon}>
       {/* 좋아요 버튼 */}
       {detailActive && (
         <div className={styled.likeCon} onClick={likeToggle}>
@@ -80,10 +77,11 @@ function WinePost({ detailActive, post }) {
             </div>
           </>
         )}
-        <div className={styled.review}>
-          <Link to={`/wineList/${post.id}`} className={styled.riveiwBtn}>
-            GO TO REVIEW
-          </Link>
+        <div
+          className={styled.review}
+          onClick={() => navigate(`/wineList/${post.id}`)}
+        >
+          GO TO REVIEW
         </div>
       </div>
     </div>
