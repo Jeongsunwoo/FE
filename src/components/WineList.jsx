@@ -5,6 +5,7 @@ import WinePost from "./WinePost";
 function WineList() {
   const array = [
     {
+      id: 1,
       name: "2013 산 페드로 에피카 소비뇽 블랑",
       vintage: "2013",
       country: "Chile (칠레) > Other (기타 지역)",
@@ -70,16 +71,20 @@ function WineList() {
       recommend_count: 0,
     },
   ];
+
   return (
-    <div className={styled.listCon}>
-      {array.map((post) => {
-        return (
-          <div className={styled.list}>
-            <WinePost searchActive={true} post={post}></WinePost>
-          </div>
-        );
-      })}
-    </div>
+    <>
+      <div className={styled.line}></div>
+      <div className={styled.listCon}>
+        {array.map((post) => {
+          return (
+            <div key={post.id} className={styled.list}>
+              <WinePost detailActive={false} post={post}></WinePost>
+            </div>
+          );
+        })}
+      </div>
+    </>
   );
 }
 
