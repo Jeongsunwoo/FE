@@ -8,9 +8,24 @@
   transition: all 0.3s;
   box-shadow: $shadow1;
   cursor: pointer;
+  position: relative;
 
   &:hover {
     transform: scale(1.02);
+  }
+
+  .likeCon {
+    position: absolute;
+    left: 10px;
+    bottom: 30px;
+    display: flex;
+    align-items: center;
+
+    .like {
+      font-size: 1.3rem;
+      font-weight: 600;
+      margin-left: 2px;
+    }
   }
 
   .leftCon {
@@ -57,7 +72,8 @@
     }
 
     .information {
-      font-size: 0.8rem;
+      width: 100%;
+      font-size: 0.9rem;
       padding: 3% 7%;
       margin-top: 5%;
       background-color: #fff;
@@ -67,11 +83,15 @@
         font-weight: 400;
         height: 30px;
         line-height: 30px;
-        padding: 0 1%;
+        padding: 0 2%;
         margin-top: 1%;
         margin-right: 5%;
         color: #fff;
         background-color: $color--wine;
+      }
+
+      p {
+        width: 90%;
       }
     }
 
@@ -83,26 +103,17 @@
 
   .review {
     @include flex-all-center;
+    @include button-black;
     width: 100px;
     height: 250px;
     padding: 3% 0;
     text-align: center;
     transition: all 0.3s;
-    background-color: $color--wine;
     position: absolute;
     top: 0;
     right: 50px;
+    transition: all 0.3s;
     cursor: pointer;
-
-    a {
-      color: #fff;
-      transition: all 0.3s;
-    }
-
-    &:hover {
-      background-color: #000000ea;
-      color: #fff;
-    }
 
     &:hover a {
       transform: translateY(-10px);

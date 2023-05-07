@@ -1,0 +1,79 @@
+@import "../base/variables";
+
+.outCon {
+  @include flex-all-center;
+  width: 100%;
+  height: 100vh;
+  background-color: $bgColor-Opacity-black;
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 10;
+
+  .modalCon {
+    width: 50%;
+    height: auto;
+    padding: 3% 5%;
+    background-color: #fff;
+    border-radius: 10px;
+    overflow: hidden;
+
+    .title {
+      font-size: 2.5rem;
+      font-family: $font-playFair;
+      color: $color--wine;
+      margin-bottom: 5%;
+    }
+
+    .contentsCon {
+      line-height: 3rem;
+      padding: 5% 10%;
+      background-color: $bgColor-light-beige;
+      border-radius: 10px;
+      overflow: hidden;
+
+      .content {
+        display: flex;
+        justify-content: start;
+        padding: 2% 0;
+        margin-bottom: 2%;
+        border-bottom: 1px solid #ccc;
+
+        .contentTitle {
+          width: 150px;
+          font-size: 1.3rem;
+          font-weight: 700;
+          padding-left: 2%;
+        }
+
+        .contentValue {
+          width: 80%;
+          font-size: 1rem;
+          padding: 0 3%;
+          background-color: #fff;
+          border-radius: 10px;
+        }
+
+        .reviewContent {
+          padding: 1% 3%;
+          border: none;
+          border-radius: 10px;
+        }
+      }
+
+      .buttonCon {
+        display: flex;
+        justify-content: end;
+        margin: 3% 0;
+
+        .postingBtn {
+          @include button-black;
+          width: 200px;
+          line-height: 50px;
+          font-size: 1.1rem;
+          border-radius: 5px;
+        }
+      }
+    }
+  }
+}

@@ -1,14 +1,46 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "../styles/css/winePost.module.css";
 import { Link, useNavigate } from "react-router-dom";
+import { AiOutlineHeart, AiFillHeart } from "react-icons/ai";
 
 function WinePost({ detailActive, post }) {
   const navigate = useNavigate();
+
+  const [islike, setIsLike] = useState(false);
+
+  const likeToggle = () => {
+    setIsLike(!islike);
+  };
+
   return (
-    <div
-      className={styled.postCon}
-      onClick={() => navigate(`/wineList/${post.id}`)}
-    >
+    <div className={styled.postCon}>
+      {/* 좋아요 버튼 */}
+      {detailActive && (
+        <div className={styled.likeCon} onClick={likeToggle}>
+          {islike ? (
+            <AiFillHeart
+              style={{
+                marginLeft: "1rem",
+                fontSize: "2rem",
+                lineHeight: "2rem",
+                paddingTop: "5px",
+                color: "#b92427",
+              }}
+            ></AiFillHeart>
+          ) : (
+            <AiOutlineHeart
+              style={{
+                marginLeft: "1rem",
+                fontSize: "2rem",
+                lineHeight: "2rem",
+                paddingTop: "5px",
+                color: "#b92427",
+              }}
+            ></AiOutlineHeart>
+          )}
+          <span className={styled.like}>{post.recommend_count}</span>
+        </div>
+      )}
       <div className={styled.leftCon}>
         <div className={styled.imgCon}>
           <img src={post.image_url} alt="wine-image" />
@@ -16,6 +48,7 @@ function WinePost({ detailActive, post }) {
       </div>
       <div className={styled.detailCon}>
         <h3 className={`${styled.data} ${styled.name}`}>{post.name}</h3>
+
         <div className={`${styled.infoCon} ${styled.country}`}>
           <span className={styled.title}>생산국가/지역</span>
           <p className={styled.data}>{post.country}</p>
@@ -44,10 +77,11 @@ function WinePost({ detailActive, post }) {
             </div>
           </>
         )}
-        <div className={styled.review}>
-          <Link to="/detail" className={styled.riveiwBtn}>
-            GO TO REVIEW
-          </Link>
+        <div
+          className={styled.review}
+          onClick={() => navigate(`/wineList/${post.id}`)}
+        >
+          GO TO REVIEW
         </div>
       </div>
     </div>
