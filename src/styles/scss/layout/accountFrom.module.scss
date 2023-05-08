@@ -1,37 +1,20 @@
 @import "../base/variables";
 
-.accountfrom {
-    width: 100%;
-    height: 100vh;
-    background-color: white(216, 220, 220);
-}
+.outCon {
+  @include flex-all-center;
+  width: 100%;
+  height: 100vh;
+  background-color: #e9e9e9;
+  // background-color: $color--wine;
+  // background: url(/public/img/bg1.png) 50% / cover;
 
-.accountLayout {
-    width: 100%;
-    height: 90%;
-    max-width: 1200px;
-    @include flex-all-center;
-    background-color: white(234, 232, 232);
-}
-
-.accountContainer {
-    width: 850px;
-    height: 500px;
-    background-image: url("https://d3h1lg3ksw6i6b.cloudfront.net/media/image/2019/05/16/5a5fd7fade2f4e53a0fe05a6fcdf9ae1_wine.jpg");
-    background-repeat : no-repeat;
-    background-color: white;
-    background-position-x: 150%;
-    background-position-y: -15%;
-    border-color: none;
-    border-radius: 8px;
-    box-shadow: 1px 1px 1px 1px grey ;
-}
-
-.accountBox {
-    width: 50%;
-    height: 100%;
-}
-
-.loginWrapper {
-    @include flex-all-center
+  .modalCon {
+    width: 35%;
+    height: auto;
+    padding: 3% 3%;
+    background-color: #fff;
+    border-radius: 5px;
+    overflow: hidden;
+    box-shadow: $shadow1;
+  }
 }

@@ -75,7 +75,7 @@ $shadow2: 2px 2px 2px #8f8f8f;
 // ERROR
 @mixin error {
   @include flex-all-center;
-  font-size: 1.5rem;
+  font-size: 1.1rem;
   text-align: center;
 }
 

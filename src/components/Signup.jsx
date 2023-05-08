@@ -3,6 +3,7 @@ import { useMutation } from "react-query";
 import { useNavigate } from "react-router-dom";
 import { useInput } from "../utils/useInput";
 import { signUpUserAxios } from "../apis/auth/signup";
+import styled from "../styles/css/login.module.css";
 
 function Signup() {
   const navigation = useNavigate();
@@ -31,38 +32,56 @@ function Signup() {
 
   return (
     <>
-      <div className="loginBox">
-        <h1>Sign Up</h1>
-
-        <form onSubmit={onSubmitUserHandler}>
-          <label htmlFor="userid">ID : </label>
+      <h5 className={styled.title}>SIGNUP</h5>
+      <div className={styled.contentsCon}>
+        <div className={styled.content}>
+          <label htmlFor="userid" className={styled.contentTitle}>
+            아이디
+          </label>
           <input
             type="text"
             value={userId}
             onChange={setUserId}
             placeholder="아이디를 입력해주세요"
+            className={styled.contentValue}
           />
-
-          <label htmlFor="password">password : </label>
+        </div>
+        <div className={styled.content}>
+          <label htmlFor="password" className={styled.contentTitle}>
+            비밀번호
+          </label>
           <input
             type="password"
             value={userPassword}
             onChange={setUserPassword}
             autoComplete="off"
             placeholder="비밀번호를 입력해주세요"
+            className={styled.contentValue}
           />
-
-          <label htmlFor="nickname">Nickname : </label>
+        </div>
+        <div className={styled.content}>
+          <label htmlFor="nickname" className={styled.contentTitle}>
+            닉네임
+          </label>
           <input
             type="text"
             value={userNickName}
             onChange={setUserNickName}
             placeholder="닉네임을 입력해주세요"
+            className={styled.contentValue}
           />
-
-          <button>회원가입</button>
-        </form>
-        <button onClick={() => navigation("/account/login")}>로그인</button>
+        </div>
+        <div className={styled.buttonCon}>
+          <button className={styled.loginBtn} onClick={onSubmitUserHandler}>
+            회원가입
+          </button>
+          <button
+            className={styled.loginBtn}
+            onClick={() => navigation("/account/login")}
+          >
+            로그인
+          </button>
+        </div>
       </div>
     </>
   );
