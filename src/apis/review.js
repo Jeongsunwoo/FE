@@ -1,17 +1,17 @@
-import instance from "./instance";
+import { instance } from "./axios";
 
 const wineInfoAndReviewsAxios = async (id) => {
   try {
-    const { data } = await instance.get("/reviews");
+    const { data } = await instance.get(`/wine/review/${id}`);
     return data;
   } catch (error) {
     throw error;
   }
 };
 
-const addReviewAxios = async () => {
+const addReviewAxios = async (id) => {
   try {
-    await instance.post("/reviews");
+    await instance.post(`wine/review/${id}`);
   } catch (error) {
     throw error;
   }

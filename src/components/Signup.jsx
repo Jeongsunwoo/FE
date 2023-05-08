@@ -1,5 +1,5 @@
 import React from "react";
-import { signUpUser } from "../api/auth/signup";
+import { signUpUser } from "../apis/auth/signup";
 import { useMutation } from "react-query";
 import { useNavigate } from "react-router-dom";
 import { useInput } from "../utils/useInput";
@@ -68,4 +68,4 @@ function Signup() {
   );
 }
 
-// export default Signup;
+export default Signup;
