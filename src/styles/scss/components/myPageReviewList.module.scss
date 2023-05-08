@@ -1,0 +1,37 @@
+@import "../base/variables";
+
+.wrap {
+  @include wrap;
+  height: auto;
+
+  .line {
+    @include line;
+  }
+
+  .postingCon {
+    width: 100%;
+    display: flex;
+    justify-content: end;
+    padding: 3% 0;
+    border: 1px solid;
+
+    .postingBtn {
+      @include button-black;
+      width: 80px;
+      line-height: 2rem;
+      margin-right: 1%;
+    }
+  }
+}
+
+.infoCon {
+    line-height: 2rem;
+    display: flex;
+    justify-content: start;
+
+    .title {
+      font-size: 1rem;
+      font-weight: 600;
+      margin-right: 3%;
+    }
+  }
