@@ -1,9 +1,9 @@
 import { configureStore } from "@reduxjs/toolkit";
-import commemtsSlice from "../modules/commemtsSlice";
+import wineInfoSlice from "../modules/wineInfoSlice";
 
 const store = configureStore({
   reducer: {
-    commemtsSlice,
+    wineInfoSlice,
   },
 });
 export default store;

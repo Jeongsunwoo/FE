@@ -4,11 +4,11 @@ import HomePage from "../pages/HomePage";
 import AccountPage from "../pages/AccountPage";
 import Login from "../components/Login";
 import Signup from "../components/Signup";
-import PostingPage from "../pages/PostingPage";
 import WineListPage from "../pages/WineListPage";
 import DetailPage from "../pages/DetailPage";
 import Footer from "../components/Footer";
 import styled from "../styles/css/app.module.css";
+import MyPage from "../pages/MyPage";
 
 function Router() {
   return (
@@ -20,8 +20,8 @@ function Router() {
           <Route path="/account/signup" element={<Signup />}></Route>
         </Route>
         <Route path="/wineList" element={<WineListPage />}></Route>
-        <Route path="/detail" element={<DetailPage />}></Route>
-        <Route path="/posting" element={<PostingPage />}></Route>
+        <Route path="/wineList/:id" element={<DetailPage />}></Route>
+        <Route path="/mypage" element={<MyPage />}></Route>
       </Routes>
       <Footer></Footer>
     </BrowserRouter>
