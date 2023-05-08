@@ -8,6 +8,7 @@ import WineListPage from "../pages/WineListPage";
 import DetailPage from "../pages/DetailPage";
 import Footer from "../components/Footer";
 import styled from "../styles/css/app.module.css";
+import MyPage from "../pages/MyPage";
 
 function Router() {
   return (
@@ -16,10 +17,11 @@ function Router() {
         <Route path="/" element={<HomePage />}></Route>
         <Route path="/account" element={<AccountPage />}>
           <Route path="/account/login" element={<Login />}></Route>
-          {/* <Route path="/account/signup" element={<Signup />}></Route> */}
+          <Route path="/account/signup" element={<Signup />}></Route>
         </Route>
         <Route path="/wineList" element={<WineListPage />}></Route>
         <Route path="/wineList/:id" element={<DetailPage />}></Route>
+        <Route path="/mypage" element={<MyPage />}></Route>
       </Routes>
       <Footer></Footer>
     </BrowserRouter>

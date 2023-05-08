@@ -1,0 +1,124 @@
+@import "../base/variables";
+
+.line {
+  @include line;
+}
+
+.listCon {
+  @include wrap;
+
+  .list {
+    width: 100%;
+  }
+}
+
+.postCon {
+    width: 100%;
+    height: auto;
+    margin-bottom: 3%;
+    display: flex;
+    transition: all 0.3s;
+    box-shadow: $shadow1;
+    cursor: pointer;
+  
+    &:hover {
+      transform: scale(1.02);
+    }
+  
+    .leftCon {
+      width: 40%;
+      height: 100%;
+  
+      .imgCon {
+        @include flex-all-center;
+        width: 100%;
+        height: 300px;
+        padding-top: 10%;
+      }
+    }
+  
+    .detailCon {
+      width: 60%;
+      height: 100%;
+      padding: 5% 5%;
+      background-color: $bgColor-light-beige;
+      position: relative;
+      top: 0;
+      right: 0;
+  
+      .name {
+        display: inline-block;
+        font-size: 1.2rem;
+        color: $color--wine;
+        font-weight: 600;
+        padding-bottom: 2%;
+        margin-bottom: 3%;
+        border-bottom: 1px solid #ccc;
+      }
+  
+      .infoCon {
+        line-height: 2rem;
+        display: flex;
+        justify-content: start;
+  
+        .title {
+          font-size: 1rem;
+          font-weight: 600;
+          margin-right: 3%;
+        }
+      }
+  
+      .information {
+        font-size: 0.8rem;
+        padding: 3% 7%;
+        margin-top: 5%;
+        background-color: #fff;
+  
+        .title {
+          font-size: 0.8rem;
+          font-weight: 400;
+          height: 30px;
+          line-height: 30px;
+          padding: 0 1%;
+          margin-top: 1%;
+          margin-right: 5%;
+          color: #fff;
+          background-color: $color--wine;
+        }
+      }
+  
+      p {
+        width: 70%;
+        margin-bottom: 1%;
+      }
+    }
+  
+    .review {
+      @include flex-all-center;
+      width: 100px;
+      height: 250px;
+      padding: 3% 0;
+      text-align: center;
+      transition: all 0.3s;
+      background-color: $color--wine;
+      position: absolute;
+      top: 0;
+      right: 50px;
+      cursor: pointer;
+  
+      a {
+        color: #fff;
+        transition: all 0.3s;
+      }
+  
+      &:hover {
+        background-color: #000000ea;
+        color: #fff;
+      }
+  
+      &:hover a {
+        transform: translateY(-10px);
+      }
+    }
+  }
+  

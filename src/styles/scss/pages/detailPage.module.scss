@@ -21,10 +21,16 @@
 
     .postingBtn {
       @include button-black;
+<<<<<<< HEAD
       width: 200px;
       line-height: 3rem;
       margin-right: 3%;
       font-size: 1.1rem;
+=======
+      width: 80px;
+      line-height: 2rem;
+      margin-right: 1%;
+>>>>>>> 9e35234332a5cb3ba50798aa8e37008fab16b44f
     }
   }
 
