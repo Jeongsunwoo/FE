@@ -1,0 +1,13 @@
+@import "../base/variables";
+
+.line {
+  @include line;
+}
+
+.listCon {
+  @include wrap;
+
+  .list {
+    width: 100%;
+  }
+}
