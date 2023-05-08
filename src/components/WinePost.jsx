@@ -1,53 +1,42 @@
-import React from "react";
 import styled from "../styles/css/winePost.module.css";
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
-function WinePost({ detailActive, post }) {
+function WinePost({ post }) {
   const navigate = useNavigate();
+  const { image_url, country, grape, vintage, name, type } = post;
+
   return (
-    <div
-      className={styled.postCon}
-      onClick={() => navigate(`/wineList/${post.id}`)}
-    >
+    <div className={styled.postCon}>
       <div className={styled.leftCon}>
         <div className={styled.imgCon}>
-          <img src={post.image_url} alt="wine-image" />
+          <img src={image_url} alt="wine-image" />
         </div>
       </div>
       <div className={styled.detailCon}>
-        <h3 className={`${styled.data} ${styled.name}`}>{post.name}</h3>
+        <h3 className={`${styled.data} ${styled.name}`}>{name}</h3>
+
         <div className={`${styled.infoCon} ${styled.country}`}>
           <span className={styled.title}>생산국가/지역</span>
-          <p className={styled.data}>{post.country}</p>
+          <p className={styled.data}>{country}</p>
         </div>
         <div className={`${styled.infoCon} ${styled.grape}`}>
           <span className={styled.title}>포도품종</span>
-          <p className={styled.data}>{post.grape}</p>
+          <p className={styled.data}>{grape}</p>
         </div>
         <div className={`${styled.infoCon} ${styled.vintage}`}>
           <span className={styled.title}>빈티지</span>
-          <p className={styled.data}>{post.vintage}</p>
+          <p className={styled.data}>{vintage}</p>
         </div>
         <div className={`${styled.infoCon} ${styled.type}`}>
           <span className={styled.title}>와인타입</span>
-          <p className={styled.data}>{post.type}</p>
+          <p className={styled.data}>{type}</p>
         </div>
-        {detailActive && (
-          <>
-            <div className={`${styled.infoCon} ${styled.winery}`}>
-              <span className={styled.title}>와이너리</span>
-              <p className={styled.data}>{post.winery}</p>
-            </div>
-            <div className={`${styled.infoCon} ${styled.information}`}>
-              <span className={styled.title}>와인 정보</span>
-              <p className={styled.data}>{post.information}</p>
-            </div>
-          </>
-        )}
-        <div className={styled.review}>
-          <Link to="/detail" className={styled.riveiwBtn}>
-            GO TO REVIEW
-          </Link>
+
+        <div
+          className={styled.review}
+          onClick={() => navigate(`/wineList/${post.id}`)}
+        >
+          GO TO REVIEW
         </div>
       </div>
     </div>
