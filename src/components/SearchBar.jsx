@@ -1,33 +1,38 @@
 import styled from "../styles/css/searchBar.module.css";
 import { BiSearch } from "react-icons/bi";
 import useInput from "../hooks/useInput";
-import { useDispatch } from "react-redux";
 import { useQuery } from "react-query";
 import { searchWineListAxios } from "../apis/wineList";
-import { onFetchWineList } from "../redux/modules/wineListSlice";
 
-function SearchBar() {
+function SearchBar({ setWineList }) {
   const initialState = "";
   const [searchValue, handleInputChange, reset] = useInput(initialState);
-
-  const dispatch = useDispatch();
 
   const { data, refetch } = useQuery("search", async () => {
     return await searchWineListAxios(searchValue);
   });
 
-  const handleSearchBtnClick = () => {
+  const handleSearchBtn = () => {
+    if (!searchValue) {
+      alert("검색어를 입력해주세요");
+      return;
+    }
     refetch();
-    dispatch(onFetchWineList(data));
+    setWineList(data);
     reset();
   };
 
   return (
     <div className={styled.searchCon}>
       <div className={styled.searchBar}>
-        <input type="text" value={searchValue} onChange={handleInputChange} />
+        <input
+          type="text"
+          value={searchValue}
+          onChange={handleInputChange}
+          required
+        />
         <div className={styled.buttonCon}>
-          <button className={styled.searchBtn} onClick={handleSearchBtnClick}>
+          <button className={styled.searchBtn} onClick={handleSearchBtn}>
             <BiSearch style={{ color: "white" }} />
           </button>
         </div>
