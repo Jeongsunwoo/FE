@@ -1,8 +1,8 @@
 import React from "react";
-import { signUpUser } from "../apis/auth/signup";
 import { useMutation } from "react-query";
 import { useNavigate } from "react-router-dom";
 import { useInput } from "../utils/useInput";
+import { signUpUserAxios } from "../apis/auth/signup";
 
 function Signup() {
   const navigation = useNavigate();
@@ -11,7 +11,7 @@ function Signup() {
   const [userPassword, setUserPassword] = useInput("");
   const [userNickName, setUserNickName] = useInput("");
 
-  const mutation = useMutation(signUpUser, {
+  const mutation = useMutation(signUpUserAxios, {
     onSuccess: () => {
       alert("회원등록 완료!");
     },

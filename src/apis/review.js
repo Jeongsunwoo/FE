@@ -1,8 +1,8 @@
-import { instance } from "./axios";
+import { baseURL } from "./axios";
 
 const wineInfoAndReviewsAxios = async (id) => {
   try {
-    const { data } = await instance.get(`/wine/review/${id}`);
+    const { data } = await baseURL.get(`/wine/review/${id}`);
     return data;
   } catch (error) {
     throw error;
@@ -11,7 +11,7 @@ const wineInfoAndReviewsAxios = async (id) => {
 
 const addReviewAxios = async (id) => {
   try {
-    await instance.post(`wine/review/${id}`);
+    await baseURL.post(`/wine/review/${id}`);
   } catch (error) {
     throw error;
   }

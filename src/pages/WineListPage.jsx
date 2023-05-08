@@ -4,20 +4,20 @@ import WineList from "../components/WineList";
 import { useQuery } from "react-query";
 import { wineListAxios } from "../apis/wineList";
 import { useEffect, useState } from "react";
+import Error from "../components/Error";
 
 function WineListPage() {
-  const { data } = useQuery("wine", wineListAxios); // 3
+  const { isError, data } = useQuery("wine", wineListAxios); // 3
   const [wineList, setWineList] = useState(data);
-
   useEffect(() => {
     setWineList(data);
   }, [data]);
+
   return (
     <>
-      {/* <header>임시 헤더</header> */}
       <div className={styled.wrap}>
-        {/* <div className={styled.banner}>임시 배너</div> */}
         <SearchBar setWineList={setWineList}></SearchBar>
+        {!data && <Error isError={isError}></Error>}
         <WineList wineList={wineList}></WineList>
       </div>
     </>
