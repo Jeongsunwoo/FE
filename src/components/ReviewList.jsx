@@ -1,40 +1,17 @@
 import React from "react";
 import styled from "../styles/css/detailPage.module.css";
 import Review from "./Review";
+import { useSelector } from "react-redux";
 
 function ReviewList() {
-  const reviews = [
-    {
-      date: "2023.05.07",
-      title:
-        "타이틀입니다.타이틀입니다.타이틀입니다.타이틀입니다.타이틀입니다.",
-      nickName: "닉네임입니다.",
-      comment:
-        "댓글내용입니다댓글내용입니다댓글내용입니다댓글내댓글내용입니다댓글내용입니다댓글내용입니다댓글내용입니다댓글내용입니다댓글내용입니다댓글내용입니다용입니다댓글내용입니다댓글내용입니다댓글내용입니다댓글내용입니다ㅏㅏㅏㅏ댓글내용입니다댓글내용입니다댓글내용입니다댓글내댓글내용입니다댓글내용입니다댓글내용입니다댓글내용입니다댓글내용입니다댓글내용입니다댓글내용입니다용입니다댓글내용입니다댓글내용입니다댓글내용입니다댓글내용입니다댓글내용입니다댓글내용입니다댓글내댓글내용입니다댓글내용입니다댓글내용입니다댓글내용입니다댓글내용입니다댓글내용입니다댓글내용입니다용입니다댓글내용입니다댓글내용입니다댓글내용입니다댓글내용입니다ㅏㅏㅏㅏㅏㅏ댓글내용입니다댓글내용입니다댓글내용입니다댓글내댓글내용입니다댓글내용입니다댓글내용입니다댓글내용입니다댓글내용입니다댓글내용입니다댓글내용입니다용입니다댓글내용입니다댓글내용입니다댓글내용입니다댓글내용입니다ㅏㅏㅏㅏㅏㅏ댓글내용입니다ㅏㅏㅏㅏㅏㅏㅏㅏ",
-    },
-    {
-      date: "2023.05.07",
-      title: "타이틀입니다.",
-      nickName: "닉네임입니다.",
-      comment: "댓글내용입니다ㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏ",
-    },
-    {
-      date: "2023.05.07",
-      title: "타이틀입니다.",
-      nickName: "닉네임입니다.",
-      comment: "댓글내용입니다ㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏ",
-    },
-    {
-      date: "2023.05.07",
-      title: "타이틀입니다.",
-      nickName: "닉네임입니다.",
-      comment: "댓글내용입니다ㅏㅏㅏㅏ",
-    },
-  ];
+  const { wineInfo, reviews } = useSelector((state) => state.wineInfoSlice);
+
   return (
     <div className={styled.listCon}>
-      {reviews.map((review) => {
-        return <Review review={review}></Review>;
+      {reviews?.map((review) => {
+        return (
+          <Review key={review.id} wineInfo={wineInfo} review={review}></Review>
+        );
       })}
     </div>
   );

@@ -1,17 +1,18 @@
 import styled from "../styles/css/review.module.css";
 import { BsPersonFill } from "react-icons/bs";
 
-function Review({ review }) {
+function Review({ wineInfo, review }) {
+  const date = review.createdAt.slice(0, 10);
   return (
     <div className={styled.reviewCon}>
       <div className={styled.nickName}>
         <h3>
-          <BsPersonFill /> {review.nickName}
+          <BsPersonFill /> 유저닉네임
         </h3>
       </div>
-      <p className={styled.title}>{review.title}</p>
-      <span className={styled.date}>{review.date}</span>
-      <p className={styled.comment}>{review.comment}</p>
+      <p className={styled.title}>{wineInfo?.name}</p>
+      <span className={styled.date}>{date}</span>
+      <p className={styled.comment}>{review?.content}</p>
     </div>
   );
 }

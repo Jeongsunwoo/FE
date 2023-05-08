@@ -43,7 +43,7 @@
   .detailCon {
     width: 60%;
     height: 100%;
-    padding: 5% 5%;
+    padding: 5% 15% 5% 5%;
     background-color: $bgColor-light-beige;
     position: relative;
     top: 0;
@@ -79,6 +79,8 @@
       background-color: #fff;
 
       .title {
+        width: 100px;
+        text-align: center;
         font-size: 0.8rem;
         font-weight: 400;
         height: 30px;
