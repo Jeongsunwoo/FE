@@ -1,4 +1,48 @@
 {
+  "newUser": [
+    {
+      "id": "1",
+      "memberId": "1",
+      "password": "2",
+      "nickname": "3"
+    },
+    {
+      "memberId": "1111",
+      "password": "1111",
+      "nickname": "111111",
+      "id": "-Qbi9ru"
+    },
+    {
+      "memberId": "목동갈고리",
+      "password": "12345",
+      "nickname": "12345",
+      "id": "4A-IZLI"
+    },
+    {
+      "memberId": "목동갈고리",
+      "password": "12345",
+      "nickname": "12345",
+      "id": "g-2Ff1z"
+    },
+    {
+      "memberId": "22222",
+      "password": "22222",
+      "nickname": "22222",
+      "id": "JBIS4GW"
+    },
+    {
+      "memberId": "22222",
+      "password": "22222",
+      "nickname": "22222",
+      "id": "UXtrDP2"
+    },
+    {
+      "memberId": "22222",
+      "password": "22222",
+      "nickname": "22222",
+      "id": "r3pgUmP"
+    }
+  ],
   "wineList": [
     {
       "name": "2012 Chateau Puech-Haut Les Complices de Puech Haut\n2012 샤또 푸에슈오 레 꽁쁠리스 드 푸에슈오",

@@ -9,6 +9,7 @@ import WineListPage from "../pages/WineListPage";
 import DetailPage from "../pages/DetailPage";
 import Footer from "../components/Footer";
 import styled from "../styles/css/app.module.css";
+import MyPage from "../pages/MyPage";
 
 function Router() {
   return (
@@ -22,6 +23,7 @@ function Router() {
         <Route path="/wineList" element={<WineListPage />}></Route>
         <Route path="/wineList/:id" element={<DetailPage />}></Route>
         <Route path="/posting" element={<PostingPage />}></Route>
+        <Route path="/mypage" element={<MyPage />}></Route>
       </Routes>
       <Footer></Footer>
     </BrowserRouter>
