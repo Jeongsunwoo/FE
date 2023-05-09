@@ -1,5 +1,5 @@
 import React from "react";
-import { signUpUser } from "../api/auth/signup";
+import { signUpUser } from "../apis/signup";
 import { useMutation } from "react-query";
 import { useNavigate } from "react-router-dom";
 import { useInput } from "../utils/useInput";
@@ -13,7 +13,6 @@ function Signup() {
 
   const mutation = useMutation(signUpUser, {
     onSuccess: () => {
-      alert("회원등록 완료!");
     },
   });
 
@@ -68,4 +67,4 @@ function Signup() {
   );
 }
 
-// export default Signup;
+export default Signup;

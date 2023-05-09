@@ -1,0 +1,54 @@
+{
+  "posts": [
+    {
+      "id": 1,
+      "title": "json-server",
+      "author": "typicode"
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  },
+  "sample": [
+    {
+    "id" : 1,
+    "content" : "탄닌감이 적당해서 좋아요~(엄지척)",
+    "createdAt" : "2023-05-05 20:59:00",
+    "modifiedAt" : "2023-05-05 20:59:00",
+    "member" : {
+    "id" : 1,
+    "memberId" : "identity",
+    "nickname" : "wineLuver"
+    }
+    },
+    {
+      "id" : 2,
+      "content" : "탄닌감이 적당해서 좋아요~(엄지척)2",
+      "createdAt" : "2023-05-05 20:59:00",
+      "modifiedAt" : "2023-05-05 20:59:00",
+      "member" : {
+      "id" : 1,
+      "memberId" : "identity",
+      "nickname" : "wineLuver"
+      }
+      },
+      {
+        "id" : 3,
+        "content" : "탄닌감이 적당해서 좋아요~(엄지척)3",
+        "createdAt" : "2023-05-05 20:59:00",
+        "modifiedAt" : "2023-05-05 20:59:00",
+        "member" : {
+        "id" : 1,
+        "memberId" : "identity",
+        "nickname" : "wineLuver"
+        }
+        }
+  ]
+}

@@ -1,46 +1,46 @@
 import React from "react";
 import styled from "../styles/css/myPageReviewList.module.css";
+import { useMutation, useQuery, useQueryClient } from "react-query";
+import { getMyPageUser, removeUserReview } from "../apis/mypage";
 
-function ReviewList() {
+function MyPageReviewList() {
 
-    const post = [
-        {
-            id: 1,
-            content: "탄닌감이 적당해서 좋아요~(엄지척)",
-            createdAt: "2023-05-05 20:59:00",
-            modifiedAt: "2023-05-05 20:59:00",
-            member: {
-                id: 1,
-                memberId: "identity",
-                nicknam: "wineLuver"
-            }
-        },
-        {
-            id: 2,
-            content: "탄닌감이 적당해서 좋아요~(엄지척)",
-            createdAt: "2023-05-05 20:59:00",
-            modifiedAt: "2023-05-05 20:59:00",
-            member: {
-                id: 1,
-                memberId: "identity",
-                nicknam: "wineLuver"
-            }
-        },
-    ]
+    const { data } = useQuery("mypageuser", getMyPageUser)
+    console.log("받아온값 2222///",data)
+
+    const queryClient = useQueryClient()
+
+    const deleteTodomutation = useMutation(removeUserReview, {
+      onSuccess: () => {
+        queryClient.invalidateQueries("mypageuser")
+      }
+    })
+
+    const clickRemoveHandler = (id) => {
+        deleteTodomutation.mutate(id)
+      };
 
     return (
         <div className={styled.wrap}>
-            <div className={styled.postingCon}>
-                <div className={`${styled.infoCon} ${styled.country}`}>
-                    <span className={styled.title}>생산국가/지역</span>
-                    {/* <p className={styled.data}>{post.country}</p> */}
-                </div>
-                <span className={styled.title}>생산국가/지역</span>
-                <button className={styled.postingBtn}>수정하기</button>
-                <button className={styled.postingBtn}>삭제하기</button>
-            </div>
+            {data?.map((post) => {
+                return (
+                    <div className={styled.postingCon} key={post.id}>
+                        <div className={styled.imgCon}>
+                            <img src={post.imageUrl} alt="wine-image" />
+                            <p>{post.country}</p>
+                        </div>
+                        <div className={styled.infoCon}>
+                            <div key={post.id} className={styled.list}>
+                                <p className={styled.data}>{post.content}</p>
+                            </div>
+                        </div>
+                        <button className={styled.postingBtn}>수정하기</button>
+                        <button className={styled.postingBtn} onClick={()=>clickRemoveHandler(post.id)}>삭제하기</button>
+                    </div>
+                );
+            })}
         </div>
     )
 }
 
-export default ReviewList;
+export default MyPageReviewList;

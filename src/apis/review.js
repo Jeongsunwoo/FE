@@ -1,4 +1,4 @@
-import instance from "./instance";
+import { instance } from "../api/axios"
 
 const wineInfoAndReviewsAxios = async (id) => {
   try {

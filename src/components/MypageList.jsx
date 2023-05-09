@@ -1,17 +1,12 @@
 import React from 'react'
 import styled from "../styles/css/myPageList.module.css";
+import { useQuery } from 'react-query';
+import { getMyPageUser } from '../apis/mypage';
 
 
 function MypageList() {
 
-    const post = {
-            memberId: "Jeong sun woo",
-            password: "12345",
-            nickname: "12345",
-            id: "g-2Ff1z",
-            image_url:
-                "http://www.wineok.com/files/thumbnails/470/256/170x240.ratio.jpg"
-    }
+    const { data } = useQuery("mypageuser", getMyPageUser)
 
     return (
         <>
@@ -20,11 +15,12 @@ function MypageList() {
                 <div className={styled.postCon}>
                     <div className={styled.leftCon}>
                         <div className={styled.imgCon}>
-                            <img src={post.image_url} alt="wine-image" />
+                            <img src={"https://www.omynara.com/wp-content/uploads/2018/02/wine-1543170_640.jpg"} alt="wine-image" />
                         </div>
                     </div>
                     <div className={styled.detailCon}>
-                        <h3 className={`${styled.data} ${styled.name}`}>{post.memberId} 님의 마이페이지</h3>
+                    <h3 className={`${styled.data} ${styled.name}`}>유저 정보 닉네임 님의 마이페이지</h3>
+                        {/* <h3 className={`${styled.data} ${styled.name}`}>{data.nickname} 님의 마이페이지</h3> */}
                     </div>
                 </div>
             </div>
