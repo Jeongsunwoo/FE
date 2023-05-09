@@ -1,8 +1,4 @@
-<<<<<<< HEAD
-import { instance } from "../api/axios"
-=======
 import { baseURL } from "./axios";
->>>>>>> 0108c75796149d05a053221683944e5cf8f3928b
 
 const wineInfoAndReviewsAxios = async (id) => {
   try {

@@ -1,5 +1,5 @@
 import axios from "axios";
-import { instance } from "../api/axios";
+import { instance } from "./axios";
 
 const getMyPageUser = async () => {
     const response = await instance.get(`/rank`)
