@@ -1,17 +1,17 @@
 import { createSlice } from "@reduxjs/toolkit";
+import { checkingLogin } from "../../hooks/useCheckingLogin";
 
 const initialState = {
-  isLogin: false,
+  isLogin: checkingLogin(),
 };
 
 const loginSlice = createSlice({
   name: "login",
   initialState,
   reducers: {
-    isLogin: (state, action) => {
-      console.log(action.payload);
+    isLogin: (action) => {
       return {
-        isLogin: action.payload,
+        isLogin: checkingLogin(),
       };
     },
   },

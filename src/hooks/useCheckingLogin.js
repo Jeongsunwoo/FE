@@ -1,5 +1,5 @@
 const checkingLogin = () => {
-  const token = sessionStorage.getItem("token");
+  const token = sessionStorage.getItem("AccessToken");
   if (token) {
     return true;
   } else {

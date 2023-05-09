@@ -1,15 +1,21 @@
-import React, { useState } from "react";
 import styled from "../styles/css/winePost.module.css";
 import { useNavigate } from "react-router-dom";
 import { AiOutlineHeart, AiFillHeart } from "react-icons/ai";
+import { useMutation, useQueryClient } from "react-query";
+import { increaseLikeAxios } from "../apis/review";
 
 function WineDetailPost({ wineInfo, isLike }) {
   const navigate = useNavigate();
-  const [islike, setIsLike] = useState(isLike);
-  console.log(isLike);
+  const queryClient = useQueryClient();
+  const mutation = useMutation(increaseLikeAxios, {
+    onSuccess: () => {
+      console.log("좋아요 성공");
+      queryClient.invalidateQueries("reviews");
+    },
+  });
 
-  const likeToggle = () => {
-    setIsLike(!islike);
+  const handleClickRecommand = () => {
+    mutation.mutate(wineInfo.id);
   };
 
   const {
@@ -27,8 +33,8 @@ function WineDetailPost({ wineInfo, isLike }) {
   return (
     <div className={styled.postCon}>
       {/* 좋아요 버튼 */}
-      <div className={styled.likeCon} onClick={likeToggle}>
-        {islike ? (
+      <div className={styled.likeCon} onClick={handleClickRecommand}>
+        {isLike ? (
           <AiFillHeart
             style={{
               marginLeft: "1rem",

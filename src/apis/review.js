@@ -9,6 +9,15 @@ const wineInfoAndReviewsAxios = async (id) => {
   }
 };
 
+const increaseLikeAxios = async (id) => {
+  try {
+    const { data } = await baseURL.post(`/wine/recommend/${id}`);
+    return data.data;
+  } catch (error) {
+    throw error;
+  }
+};
+
 const addReviewAxios = async (payload) => {
   try {
     const content = { content: payload.content };
@@ -18,4 +27,4 @@ const addReviewAxios = async (payload) => {
   }
 };
 
-export { wineInfoAndReviewsAxios, addReviewAxios };
+export { wineInfoAndReviewsAxios, addReviewAxios, increaseLikeAxios };
