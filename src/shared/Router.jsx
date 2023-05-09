@@ -9,10 +9,12 @@ import DetailPage from "../pages/DetailPage";
 import Footer from "../components/Footer";
 import MyPage from "../pages/MyPage";
 import styled from "../styles/css/app.module.css";
+import Header from "../components/Header";
 
 function Router() {
   return (
     <BrowserRouter>
+      <Header />
       <Routes>
         <Route path="/" element={<HomePage />}></Route>
         <Route path="/account" element={<AccountPage />}>

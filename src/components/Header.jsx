@@ -1,21 +1,52 @@
-import React from 'react'
+import React from "react";
 import styled from "../styles/css/header.module.css";
-import { FaRegUser } from "react-icons/fa";
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from "react-router-dom";
+import { checkingLogin, logout } from "../hooks/useCheckingLogin";
 
 function Header() {
+  const navigate = useNavigate();
+  const isLogin = checkingLogin();
 
-    return (
-        <header className={styled.header}>
-            <button type="button" className={styled.headerLogo} onClick={() => { console.log("Home 페이지로") }}>
-                <h1 className={styled.headerFont}>WeLuvWine</h1>
+  return (
+    <header>
+      <nav>
+        <Link to="/">
+          <h1 className={styled.headerFont}>WeLuvWine</h1>
+        </Link>
+        {isLogin ? (
+          <div className={styled.loginCon}>
+            <button
+              className={styled.myPageBtn}
+              onClick={() => {
+                navigate("/mypage");
+              }}
+            >
+              MY PAGE
             </button>
-            <div className={styled.buttonContainer}>
-                <Link type="button" className={styled.iconLogin} to={"/account/login"}>Login</Link>
-                <Link type="button" className={styled.iconmyPage} to={`/mypage`}><FaRegUser /></Link>
-            </div>
-        </header>
-    )
+            <button
+              className={styled.logoutBtn}
+              onClick={() => {
+                logout();
+              }}
+            >
+              LOGOUT
+            </button>
+          </div>
+        ) : (
+          <div className={styled.logoutCon}>
+            <button
+              className={styled.loginBtn}
+              onClick={() => {
+                navigate("/account/login");
+              }}
+            >
+              LOGIN
+            </button>
+          </div>
+        )}
+      </nav>
+    </header>
+  );
 }
 
-export default Header
+export default Header;

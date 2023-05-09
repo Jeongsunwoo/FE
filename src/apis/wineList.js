@@ -7,19 +7,19 @@ const wineListAxios = async () => {
         "Access-Control-Allow-Origin": "*",
       },
     });
-    return data;
+    return data.data;
   } catch (error) {
     console.log("와인리스트 에러");
     throw error;
   }
 };
 
-const searchWineListAxios = async (searchData) => {
+const searchWineListAxios = async (payload) => {
   try {
-    const { data } = await baseURL.get("/wine/rank");
-    return data;
+    const { data } = await baseURL.get("/wine/search", payload);
+    return data.data;
   } catch (error) {
-    console.log("와인리스트 에러");
+    console.log("검색리스트 에러");
     throw error;
   }
 };

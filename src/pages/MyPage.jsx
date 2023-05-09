@@ -4,7 +4,6 @@ import MypageList from "../components/MypageList";
 import MyPageReviewList from "../components/MyPageReviewList";
 
 function MyPage() {
-
   return (
     <>
       <div className={styled.wrap}>
@@ -13,7 +12,7 @@ function MyPage() {
         {/* <MyPageReviewList></MyPageReviewList> */}
       </div>
     </>
-  )
+  );
 }
 
 export default MyPage;

@@ -10,4 +10,7 @@
   .list {
     width: 100%;
   }
+  .error {
+    @include error;
+  }
 }

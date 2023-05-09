@@ -6,11 +6,9 @@
   height: auto;
 
   .title {
+    @include logo;
     margin: 5% 2%;
     font-size: 3rem;
-    font-weight: 900;
-    font-family: $font-playFair;
-    text-shadow: $shadow2;
   }
 
   .postingCon {
@@ -21,16 +19,10 @@
 
     .postingBtn {
       @include button-black;
-<<<<<<< HEAD
       width: 200px;
       line-height: 3rem;
       margin-right: 3%;
       font-size: 1.1rem;
-=======
-      width: 80px;
-      line-height: 2rem;
-      margin-right: 1%;
->>>>>>> 9e35234332a5cb3ba50798aa8e37008fab16b44f
     }
   }
 

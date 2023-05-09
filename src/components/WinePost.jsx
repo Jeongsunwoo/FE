@@ -3,13 +3,13 @@ import { useNavigate } from "react-router-dom";
 
 function WinePost({ post }) {
   const navigate = useNavigate();
-  const { image_url, country, grape, vintage, name, type } = post;
+  const { imageUrl, country, grape, vintage, name, type } = post;
 
   return (
     <div className={styled.postCon}>
       <div className={styled.leftCon}>
         <div className={styled.imgCon}>
-          <img src={image_url} alt="wine-image" />
+          <img src={imageUrl} alt="wine-image" />
         </div>
       </div>
       <div className={styled.detailCon}>

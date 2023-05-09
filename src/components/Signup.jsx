@@ -7,7 +7,6 @@ import styled from "../styles/css/login.module.css";
 
 function Signup() {
   const navigation = useNavigate();
-
   const [userId, setUserId] = useInput("");
   const [userPassword, setUserPassword] = useInput("");
   const [userNickName, setUserNickName] = useInput("");

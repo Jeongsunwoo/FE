@@ -9,11 +9,12 @@ import WineDetailPost from "../components/wineDetailPost";
 import { useDispatch } from "react-redux";
 import { onFetchWineInfo } from "../redux/modules/wineInfoSlice";
 import Error from "../components/Error";
+import { notLoginRouting } from "../hooks/useCheckingLogin";
 
 function DetailPage() {
   const { id } = useParams();
   const dispatch = useDispatch();
-  const { isError, isLoading, data } = useQuery("reviews", () =>
+  const { isError, data } = useQuery("reviews", () =>
     wineInfoAndReviewsAxios(id)
   );
 
@@ -23,6 +24,7 @@ function DetailPage() {
   };
 
   useEffect(() => {
+    notLoginRouting();
     if (data) {
       dispatch(onFetchWineInfo(data));
     }
@@ -49,11 +51,7 @@ function DetailPage() {
         </div>
         <div className={styled.line}></div>
         <h1 className={styled.title}>WINE review</h1>
-        {data ? (
-          <ReviewList></ReviewList>
-        ) : (
-          <div>{isLoading ? "로딩중입니다." : "서버 에러입니다."}</div>
-        )}
+        {data ? <ReviewList></ReviewList> : <Error isError={isError}></Error>}
       </div>
     </>
   );

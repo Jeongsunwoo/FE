@@ -33,6 +33,9 @@ function Posting({ wineName, isModalOpen }) {
   return (
     <div className={styled.outCon}>
       <div className={styled.modalCon}>
+        <button className={styled.closeBtn} onClick={isModalOpen}>
+          X
+        </button>
         <h5 className={styled.title}>Review Posting</h5>
         <div className={styled.contentsCon}>
           <div className={styled.content}>
