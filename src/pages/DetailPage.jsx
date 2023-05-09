@@ -14,7 +14,7 @@ import { notLoginRouting } from "../hooks/useCheckingLogin";
 function DetailPage() {
   const { id } = useParams();
   const dispatch = useDispatch();
-  const { isError, isLoading, data } = useQuery("reviews", () =>
+  const { isError, data } = useQuery("reviews", () =>
     wineInfoAndReviewsAxios(id)
   );
 

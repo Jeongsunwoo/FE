@@ -2,8 +2,6 @@ import React from "react";
 import styled from "../styles/css/detailPage.module.css";
 import MypageList from "../components/MypageList";
 import MyPageReviewList from "../components/MyPageReviewList";
-import { useEffect, useNavigate } from "react";
-import { notLoginRouting } from "../hooks/useCheckingLogin";
 
 function MyPage() {
   return (
