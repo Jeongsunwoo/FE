@@ -9,9 +9,10 @@ const wineInfoAndReviewsAxios = async (id) => {
   }
 };
 
-const addReviewAxios = async (id) => {
+const addReviewAxios = async (payload) => {
   try {
-    await baseURL.post(`/wine/review/${id}`);
+    const content = { content: payload.content };
+    await baseURL.post(`/wine/review/${payload.id}`, content);
   } catch (error) {
     throw error;
   }

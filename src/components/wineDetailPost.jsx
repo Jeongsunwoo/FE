@@ -3,18 +3,18 @@ import styled from "../styles/css/winePost.module.css";
 import { useNavigate } from "react-router-dom";
 import { AiOutlineHeart, AiFillHeart } from "react-icons/ai";
 
-function WineDetailPost({ wineInfo }) {
+function WineDetailPost({ wineInfo, isLike }) {
   const navigate = useNavigate();
-
-  const [islike, setIsLike] = useState(false);
+  const [islike, setIsLike] = useState(isLike);
+  console.log(isLike);
 
   const likeToggle = () => {
     setIsLike(!islike);
   };
 
   const {
-    like_count,
-    image_url,
+    recommendCount,
+    imageUrl,
     country,
     winery,
     grape,
@@ -49,11 +49,11 @@ function WineDetailPost({ wineInfo }) {
             }}
           ></AiOutlineHeart>
         )}
-        <span className={styled.like}>{like_count}</span>
+        <span className={styled.like}>{recommendCount}</span>
       </div>
       <div className={styled.leftCon}>
         <div className={styled.imgCon}>
-          <img src={image_url} alt="wine-image" />
+          <img src={imageUrl} alt="wine-image" />
         </div>
       </div>
       <div className={styled.detailCon}>

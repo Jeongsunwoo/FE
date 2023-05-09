@@ -40,7 +40,10 @@ function DetailPage() {
       <div className={styled.wrap}>
         <h1 className={styled.title}>WINE info</h1>
         {data ? (
-          <WineDetailPost wineInfo={data?.wine}></WineDetailPost>
+          <WineDetailPost
+            wineInfo={data?.wine}
+            isLike={data?.recommend}
+          ></WineDetailPost>
         ) : (
           <Error isError={isError}></Error>
         )}

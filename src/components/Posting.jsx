@@ -3,8 +3,10 @@ import styled from "../styles/css/posting.module.css";
 import { useInput } from "../utils/useInput";
 import { useMutation, useQueryClient } from "react-query";
 import { addReviewAxios } from "../apis/review";
+import { useParams } from "react-router-dom";
 
 function Posting({ wineName, isModalOpen }) {
+  const { id } = useParams();
   const initialState = {
     content: "",
   };
@@ -27,7 +29,10 @@ function Posting({ wineName, isModalOpen }) {
       alert("리뷰 내용을 입력해 주세요!");
       return;
     }
-    mutation.mutate(input);
+    mutation.mutate({
+      id,
+      content: input,
+    });
   };
 
   return (

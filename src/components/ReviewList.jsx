@@ -5,7 +5,7 @@ import { useSelector } from "react-redux";
 
 function ReviewList() {
   const { wineInfo, reviews } = useSelector((state) => state.wineInfoSlice);
-
+  console.log(reviews);
   return (
     <div className={styled.listCon}>
       {reviews?.map((review) => {

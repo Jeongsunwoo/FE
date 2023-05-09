@@ -7,7 +7,7 @@ function Review({ wineInfo, review }) {
     <div className={styled.reviewCon}>
       <div className={styled.nickName}>
         <h3>
-          <BsPersonFill /> 유저닉네임
+          <BsPersonFill /> {review.member.nickname}
         </h3>
       </div>
       <p className={styled.title}>{wineInfo?.name}</p>

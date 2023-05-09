@@ -4,6 +4,8 @@ import { useMutation } from "react-query";
 import { Link, useNavigate } from "react-router-dom";
 import { useInputs } from "../hooks/useInputs";
 import styled from "../styles/css/login.module.css";
+import { useDispatch } from "react-redux";
+import { isLogin } from "../redux/modules/loginSlice";
 
 function Login() {
   const initialState = {
@@ -12,16 +14,16 @@ function Login() {
   };
   const [userInfo, handleInputsChange, resetForm] = useInputs(initialState);
   const navigate = useNavigate();
-
+  const dispatch = useDispatch();
   const mutation = useMutation(loginAxios, {
     onSuccess: (message) => {
       console.log(message);
       alert("로그인 성공");
+      dispatch(isLogin(true));
       resetForm();
       navigate("/");
     },
-    onError: ({ message }) => {
-      console.log(message);
+    onError: () => {
       alert("ERROR : 서버 에러 로그인 실패");
     },
   });
