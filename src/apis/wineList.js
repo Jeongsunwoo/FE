@@ -14,9 +14,9 @@ const wineListAxios = async () => {
   }
 };
 
-const searchWineListAxios = async (searchData) => {
+const searchWineListAxios = async (payload) => {
   try {
-    const { data } = await baseURL.get("/wine/search");
+    const { data } = await baseURL.get("/wine/search", payload);
     return data.data;
   } catch (error) {
     console.log("검색리스트 에러");

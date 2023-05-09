@@ -11,7 +11,7 @@ function SearchBar({ setWineList }) {
   const { data, refetch } = useQuery(
     "search",
     async () => {
-      return await searchWineListAxios(searchValue);
+      return await searchWineListAxios({ searchKeyword: searchValue });
     },
     { enabled: false }
   );

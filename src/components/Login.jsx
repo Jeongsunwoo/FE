@@ -14,8 +14,8 @@ function Login() {
   const navigate = useNavigate();
 
   const mutation = useMutation(loginAxios, {
-    onSuccess: (token) => {
-      sessionStorage.setItem("AccessToken", token);
+    onSuccess: (message) => {
+      console.log(message);
       alert("로그인 성공");
       resetForm();
       navigate("/");
@@ -33,7 +33,7 @@ function Login() {
     }
     mutation.mutate({
       memberId: userInfo.userId,
-      memberPw: userInfo.userPw,
+      password: userInfo.userPw,
     });
   };
 

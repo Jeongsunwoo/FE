@@ -5,8 +5,7 @@ import { checkingLogin, logout } from "../hooks/useCheckingLogin";
 
 function Header() {
   const navigate = useNavigate();
-  // const isLogin = checkingLogin();
-  const isLogin = true;
+  const isLogin = checkingLogin();
 
   return (
     <header>

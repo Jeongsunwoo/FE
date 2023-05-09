@@ -36,15 +36,15 @@ instance.interceptors.request.use(
 
 instance.interceptors.response.use(
   function (response) {
-    console.log("인터넵트 응답 받았어요!");
-    // 정상 응답
+    const token = response.headers.get("ACCESS_KEY");
+    const sliceToken = token.slice(6, token.length - 1).trim();
+    if (sliceToken) {
+      // 추출한 토큰 값을 처리하는 코드 작성
+      sessionStorage.setItem("AccessToken", sliceToken);
+    }
     return response;
   },
   function (error) {
-    console.log("인터셉트 응답 못받았어요...ㅠㅠ");
     return Promise.reject(error);
   }
 );
-
-// testtesttest
-// Aaaaa11!

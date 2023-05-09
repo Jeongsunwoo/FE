@@ -19,7 +19,7 @@ const notLoginRouting = (navigate) => {
 
 const logout = () => {
   if (checkingLogin) {
-    sessionStorage.removeItem("token");
+    sessionStorage.removeItem("AccessToken");
     alert("로그아웃 되었습니다");
   }
 };
