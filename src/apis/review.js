@@ -3,7 +3,7 @@ import { baseURL } from "./axios";
 const wineInfoAndReviewsAxios = async (id) => {
   try {
     const { data } = await baseURL.get(`/wine/review/${id}`);
-    return data;
+    return data.data;
   } catch (error) {
     throw error;
   }

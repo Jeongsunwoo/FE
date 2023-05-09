@@ -11,11 +11,11 @@ $font-roboto: "Noto Sans KR", sans-serif; //한글
 $font-notoSans: "Noto Sans KR", sans-serif; //영어
 $font-playFair: "Playfair Display", serif; // 로고
 $font-inter: "Inter", sans-serif;
-// 로고
 
 // shadow
 $shadow1: 0 10px 20px rgba(0, 0, 0, 0.19);
 $shadow2: 2px 2px 2px #8f8f8f;
+$shadow3: 2px 2px 5px #b9b9b9;
 
 // mixin 함수
 @mixin wrap {
@@ -49,6 +49,13 @@ $shadow2: 2px 2px 2px #8f8f8f;
   align-items: center;
 }
 
+// 로고
+@mixin logo {
+  font-weight: 900;
+  font-family: $font-playFair;
+  text-shadow: $shadow2;
+}
+
 // button
 @mixin button-black {
   background-color: $color--wine;
@@ -77,6 +84,7 @@ $shadow2: 2px 2px 2px #8f8f8f;
   @include flex-all-center;
   font-size: 1.1rem;
   text-align: center;
+  padding: 3% 0;
 }
 
 .error {

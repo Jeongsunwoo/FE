@@ -7,7 +7,7 @@ import { useEffect, useState } from "react";
 import Error from "../components/Error";
 
 function WineListPage() {
-  const { isError, data } = useQuery("wine", wineListAxios); // 3
+  const { isError, data } = useQuery("wine", wineListAxios);
   const [wineList, setWineList] = useState(data);
   useEffect(() => {
     setWineList(data);

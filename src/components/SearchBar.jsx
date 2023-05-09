@@ -8,9 +8,13 @@ function SearchBar({ setWineList }) {
   const initialState = "";
   const [searchValue, handleInputChange, reset] = useInput(initialState);
 
-  const { data, refetch } = useQuery("search", async () => {
-    return await searchWineListAxios(searchValue);
-  });
+  const { data, refetch } = useQuery(
+    "search",
+    async () => {
+      return await searchWineListAxios(searchValue);
+    },
+    { enabled: false }
+  );
 
   const handleSearchBtn = () => {
     if (!searchValue) {

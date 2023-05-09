@@ -7,13 +7,17 @@ function WineList({ wineList }) {
     <>
       <div className={styled.line}></div>
       <div className={styled.listCon}>
-        {wineList?.map((post) => {
-          return (
-            <div key={post.id} className={styled.list}>
-              <WinePost detailActive={false} post={post}></WinePost>
-            </div>
-          );
-        })}
+        {wineList ? (
+          wineList?.map((post) => {
+            return (
+              <div key={post.id} className={styled.list}>
+                <WinePost detailActive={false} post={post}></WinePost>
+              </div>
+            );
+          })
+        ) : (
+          <div className={styled.error}> ❗검색 결과가 없습니다.</div>
+        )}
       </div>
     </>
   );
