@@ -3,11 +3,11 @@ import { BiSearch } from "react-icons/bi";
 import useInput from "../hooks/useInput";
 import { useQuery } from "react-query";
 import { searchWineListAxios } from "../apis/wineList";
+import { useEffect } from "react";
 
 function SearchBar({ setWineList }) {
   const initialState = "";
   const [searchValue, handleInputChange, reset] = useInput(initialState);
-
   const { data, refetch } = useQuery(
     "search",
     async () => {
@@ -22,9 +22,14 @@ function SearchBar({ setWineList }) {
       return;
     }
     refetch();
-    setWineList(data);
     reset();
   };
+
+  useEffect(() => {
+    if (data) {
+      setWineList(data);
+    }
+  }, [data]);
 
   return (
     <div className={styled.searchCon}>

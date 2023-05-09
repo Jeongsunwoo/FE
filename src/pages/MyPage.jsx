@@ -1,6 +1,5 @@
 import React from "react";
 import styled from "../styles/css/detailPage.module.css";
-import MypageList from "../components/MypageUserInfo";
 import MyPageReviewList from "../components/MyPageReviewList";
 import MypageUserInfo from "../components/MypageUserInfo";
 
