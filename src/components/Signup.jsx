@@ -25,6 +25,11 @@ function Signup() {
       password: userPassword,
       nickname: userNickName,
     };
+    if(userId.length == 0){
+      alert("ID를 입력해주세요")
+    }else if(userPassword.length == 0){
+      alert("PW를 입력해주세요")
+    }else alert("닉네임을 입력해주세요")
     console.log("등록되는 회원 정보 => ", newUser);
     mutation.mutate(newUser);
   };

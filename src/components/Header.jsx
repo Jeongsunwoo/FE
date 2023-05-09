@@ -12,7 +12,7 @@ function Header() {
             </button>
             <div className={styled.buttonContainer}>
                 <Link type="button" className={styled.iconLogin} to={"/account/login"}>Login</Link>
-                <button type="button" className={styled.iconmyPage} onClick={() => { console.log("마이 페이지로") }}><FaRegUser /></button>
+                <Link type="button" className={styled.iconmyPage} to={`/mypage`}><FaRegUser /></Link>
             </div>
         </header>
     )

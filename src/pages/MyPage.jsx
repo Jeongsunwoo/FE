@@ -10,7 +10,7 @@ function MyPage() {
       <div className={styled.wrap}>
         <div className={styled.line}></div>
         <MypageList></MypageList>
-        <MyPageReviewList></MyPageReviewList>
+        {/* <MyPageReviewList></MyPageReviewList> */}
       </div>
     </>
   )

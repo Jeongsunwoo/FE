@@ -1,13 +1,22 @@
 import axios from "axios";
-import { instance } from "./axios";
+import { baseURL, instance } from "./axios";
 
-const getMyPageUser = async () => {
-    const response = await instance.get(`/rank`)
+const getMyPageReviewUser = async () => {
+    const response = await baseURL.get(`/mypage`)
     return response.data.data
 }
 
 const removeUserReview = async (id) => {
-    axios.delete(`${process.env.REACT_APP_SERVER_URL}/sample/${id}`)
+    baseURL.delete(`/review/${id}`)
 }
 
-export { getMyPageUser, removeUserReview }
+const updatePost = async (updatedPost) => {
+    await axios.patch(`/review/${updatedPost.id}`,
+        {
+          title: updatedPost.title,
+          body: updatedPost.body,
+        }
+      );
+    }
+
+export { getMyPageReviewUser, removeUserReview, updatePost }
