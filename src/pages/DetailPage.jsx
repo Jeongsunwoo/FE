@@ -8,11 +8,12 @@ import { useParams } from "react-router";
 import WineDetailPost from "../components/wineDetailPost";
 import { useDispatch } from "react-redux";
 import { onFetchWineInfo } from "../redux/modules/wineInfoSlice";
+import Error from "../components/Error";
 
 function DetailPage() {
   const { id } = useParams();
   const dispatch = useDispatch();
-  const { isLoading, data } = useQuery("reviews", () =>
+  const { isError, isLoading, data } = useQuery("reviews", () =>
     wineInfoAndReviewsAxios(id)
   );
 
@@ -28,13 +29,18 @@ function DetailPage() {
   }, [dispatch, data]);
   return (
     <>
-      {isModalOpen && <Posting isModalOpen={modalOpenToggle}></Posting>}
+      {isModalOpen && (
+        <Posting
+          wineName={data?.wine.name}
+          isModalOpen={modalOpenToggle}
+        ></Posting>
+      )}
       <div className={styled.wrap}>
         <h1 className={styled.title}>WINE info</h1>
         {data ? (
           <WineDetailPost wineInfo={data?.wine}></WineDetailPost>
         ) : (
-          <div>{isLoading ? "로딩중입니다." : "서버 에러입니다."}</div>
+          <Error isError={isError}></Error>
         )}
         <div className={styled.postingCon}>
           <button className={styled.postingBtn} onClick={modalOpenToggle}>

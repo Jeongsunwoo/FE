@@ -7,8 +7,8 @@ import Signup from "../components/Signup";
 import WineListPage from "../pages/WineListPage";
 import DetailPage from "../pages/DetailPage";
 import Footer from "../components/Footer";
-import styled from "../styles/css/app.module.css";
 import MyPage from "../pages/MyPage";
+import styled from "../styles/css/app.module.css";
 
 function Router() {
   return (
