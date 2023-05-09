@@ -9,16 +9,15 @@ function MyPageReviewList() {
     const queryClient = useQueryClient()
 
     const { data } = useQuery("mypageuser", getMyPageReviewUser)
-    console.log("mypageUser받아온값 => ", data)
-
-    const deleteTodomutation = useMutation(removeUserReview, {
+    
+    const deletemutation = useMutation(removeUserReview, {
         onSuccess: () => {
             queryClient.invalidateQueries("mypageuser")
         }
     })
 
     const clickRemoveHandler = (id) => {
-        deleteTodomutation.mutate(id)
+        deletemutation.mutate(id)
     };
 
     const [isModalOpen, setIsModalOpen] = useState(false);
@@ -39,7 +38,7 @@ function MyPageReviewList() {
                     return (
                         <div className={styled.postingCon} key={post.id}>
                             <div className={styled.imgCon}>
-                                <img src={post.imageUrl} alt="wine-image" />
+                                <img src={post.wine.imageUrl} alt="wine-image" />
                             </div>
                             <div className={styled.infoCon}>
                                 <div key={post.id} className={styled.list}>

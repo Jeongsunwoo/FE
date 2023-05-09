@@ -11,7 +11,7 @@ function Signup() {
   const [userPassword, setUserPassword] = useInput("");
   const [userNickName, setUserNickName] = useInput("");
 
-  const mutation = useMutation(signUpUserAxios, {
+  const addmutation = useMutation(signUpUserAxios, {
     onSuccess: () => {
     },
   });
@@ -28,9 +28,12 @@ function Signup() {
       alert("ID를 입력해주세요")
     }else if(userPassword.length == 0){
       alert("PW를 입력해주세요")
-    }else alert("닉네임을 입력해주세요")
+    }else if(userNickName.length == 0){
+      alert("닉네임을 입력해주세요")
+    }
     console.log("등록되는 회원 정보 => ", newUser);
-    mutation.mutate(newUser);
+    
+    addmutation.mutate(newUser);
   };
 
   return (

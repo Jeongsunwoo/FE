@@ -1,14 +1,13 @@
 import React from 'react'
 import styled from "../styles/css/myPageList.module.css";
 import { useQuery } from 'react-query';
-import { getMyPageReviewUser } from '../apis/mypage';
+import { getMyPageUserInfo } from '../apis/mypage';
 
 
-function MypageList() {
+function MypageUserInfo() {
 
-    const { data } = useQuery("mypageuser", getMyPageReviewUser)
-    console.log("mypageUser받아온값 => ", data)
-
+    const { data } = useQuery("mypageuser", getMyPageUserInfo)
+    
     return (
         <>
             <div className={styled.line}></div>
@@ -20,8 +19,7 @@ function MypageList() {
                         </div>
                     </div>
                     <div className={styled.detailCon}>
-                    <h3 className={`${styled.data} ${styled.name}`}>{data?.member.nickname} 님의 마이페이지</h3>
-                        {/* <h3 className={`${styled.data} ${styled.name}`}>{data.nickname} 님의 마이페이지</h3> */}
+                    <h3 className={`${styled.data} ${styled.name}`}>{data[0]?.member.nickname} 님의 마이페이지</h3>
                     </div>
                 </div>
             </div>
@@ -29,4 +27,4 @@ function MypageList() {
     )
 }
 
-export default MypageList
+export default MypageUserInfo

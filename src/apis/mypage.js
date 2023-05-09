@@ -1,17 +1,24 @@
 import axios from "axios";
-import { baseURL, instance } from "./axios";
+import { baseURL } from "./axios";
 
-const getMyPageReviewUser = async () => {
-    const response = await baseURL.get(`/mypage`)
+const getMyPageUserInfo = async () => {
+    const response = await baseURL.get(`/wine/mypage`)
+    console.log("response1 => ",response)
     return response.data.data
 }
 
+const getMyPageReviewUser = async () => {
+  const response = await baseURL.get(`/wine/mypage`)
+  console.log("response2 => ",response)
+  return response.data.data
+}
+
 const removeUserReview = async (id) => {
-    baseURL.delete(`/review/${id}`)
+    await baseURL.delete(`/wine/review/${id}`)
 }
 
 const updatePost = async (updatedPost) => {
-    await axios.patch(`/review/${updatedPost.id}`,
+    await axios.patch(`/wine/review/${updatedPost.id}`,
         {
           title: updatedPost.title,
           body: updatedPost.body,
@@ -19,4 +26,4 @@ const updatePost = async (updatedPost) => {
       );
     }
 
-export { getMyPageReviewUser, removeUserReview, updatePost }
+export { getMyPageReviewUser, getMyPageUserInfo, removeUserReview, updatePost }
