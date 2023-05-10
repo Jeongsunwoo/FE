@@ -5,8 +5,9 @@ import { useMutation, useQueryClient } from "react-query";
 import { addReviewAxios } from "../apis/review";
 import { useParams } from "react-router-dom";
 
-function Posting({ wineName, isModalOpen }) {
+function Posting({ nickName, wineName, isModalOpen }) {
   const { id } = useParams();
+
   const initialState = {
     content: "",
   };
@@ -45,7 +46,7 @@ function Posting({ wineName, isModalOpen }) {
         <div className={styled.contentsCon}>
           <div className={styled.content}>
             <span className={styled.contentTitle}>NickName</span>
-            <p className={styled.contentValue}>닉네임</p>
+            <p className={styled.contentValue}>{nickName}</p>
           </div>
           <div className={styled.content}>
             <span className={styled.contentTitle}>Wine</span>

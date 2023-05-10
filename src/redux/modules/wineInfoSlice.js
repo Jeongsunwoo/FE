@@ -10,7 +10,6 @@ const wineInfoSlice = createSlice({
   initialState,
   reducers: {
     onFetchWineInfo: (state, action) => {
-      console.log(action.payload.review);
       return {
         ...state,
         wineInfo: action.payload.wine,
