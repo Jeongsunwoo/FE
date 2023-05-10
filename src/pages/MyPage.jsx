@@ -16,7 +16,6 @@ function MyPage() {
   return (
     <>
       <div className={styled.wrap}>
-        <div className={styled.line}></div>
         <MypageUserInfo></MypageUserInfo>
         <MyPageReviewList></MyPageReviewList>
       </div>
