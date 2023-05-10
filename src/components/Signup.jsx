@@ -12,8 +12,7 @@ function Signup() {
   const [userNickName, setUserNickName] = useInput("");
 
   const addmutation = useMutation(signUpUserAxios, {
-    onSuccess: () => {
-    },
+    onSuccess: () => {},
   });
 
   const onSubmitUserHandler = (e) => {
@@ -24,15 +23,15 @@ function Signup() {
       password: userPassword,
       nickname: userNickName,
     };
-    if(userId.length == 0){
-      alert("ID를 입력해주세요")
-    }else if(userPassword.length == 0){
-      alert("PW를 입력해주세요")
-    }else if(userNickName.length == 0){
-      alert("닉네임을 입력해주세요")
+    if (userId.length == 0) {
+      alert("ID를 입력해주세요");
+    } else if (userPassword.length == 0) {
+      alert("PW를 입력해주세요");
+    } else if (userNickName.length == 0) {
+      alert("닉네임을 입력해주세요");
     }
     console.log("등록되는 회원 정보 => ", newUser);
-    
+
     addmutation.mutate(newUser);
   };
 
@@ -80,12 +79,6 @@ function Signup() {
         <div className={styled.buttonCon}>
           <button className={styled.loginBtn} onClick={onSubmitUserHandler}>
             회원가입
-          </button>
-          <button
-            className={styled.loginBtn}
-            onClick={() => navigation("/account/login")}
-          >
-            로그인
           </button>
         </div>
       </div>

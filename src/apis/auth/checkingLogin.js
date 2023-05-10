@@ -1,5 +1,5 @@
 const checkingLogin = () => {
-  const token = sessionStorage.getItem("token");
+  const token = sessionStorage.getItem("AccessToken");
   if (token) {
     return true;
   } else {
@@ -8,12 +8,11 @@ const checkingLogin = () => {
 };
 
 const notLoginRouting = (navigate) => {
-  if (checkingLogin) {
-    // console.log(checkingLogin);
+  if (checkingLogin()) {
     return;
   } else {
-    alert("로그인 시 이용 가능한 페이지 입니다.");
     navigate("/account/login");
+    alert("로그인 시 이용 가능한 페이지 입니다.");
   }
 };
 

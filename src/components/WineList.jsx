@@ -3,6 +3,7 @@ import styled from "../styles/css/wineList.module.css";
 import WinePost from "./WinePost";
 
 function WineList({ wineList }) {
+  console.log("리스트", wineList);
   return (
     <>
       <div className={styled.line}></div>

@@ -9,10 +9,12 @@ import WineDetailPost from "../components/wineDetailPost";
 import { useDispatch } from "react-redux";
 import { onFetchWineInfo } from "../redux/modules/wineInfoSlice";
 import Error from "../components/Error";
-import { notLoginRouting } from "../hooks/useCheckingLogin";
+import { notLoginRouting } from "../apis/auth/checkingLogin";
+import { useNavigate } from "react-router-dom";
 
 function DetailPage() {
   const { id } = useParams();
+  const navigate = useNavigate();
   const dispatch = useDispatch();
   const { isError, data } = useQuery("reviews", () =>
     wineInfoAndReviewsAxios(id)
@@ -24,7 +26,7 @@ function DetailPage() {
   };
 
   useEffect(() => {
-    notLoginRouting();
+    notLoginRouting(navigate);
     if (data) {
       dispatch(onFetchWineInfo(data));
     }

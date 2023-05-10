@@ -3,21 +3,31 @@ import styled from "../styles/css/header.module.css";
 import { Link, useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { isLogin } from "../redux/modules/loginSlice";
-import { useEffect } from "react";
+import { useMutation } from "react-query";
+import { logoutAxios } from "../apis/auth/login";
+import { checkingLogin } from "../apis/auth/checkingLogin";
+
 function Header() {
   const navigate = useNavigate();
   const dispatch = useDispatch();
-  // const isLogin = checkingLogin();
-  const login = useSelector((state) => state.loginSlice.isLogin);
+  const mutation = useMutation(logoutAxios, {
+    onSuccess: (res) => {
+      sessionStorage.removeItem("AccessToken");
+      dispatch(isLogin(false));
+      alert("로그아웃 처리 되었습니다.");
+      navigate("/account/login");
+    },
+    onError: () => {
+      alert("ERROR : 로그아웃 실패");
+    },
+  });
+
+  // const login = useSelector((state) => state.loginSlice.isLogin);
+  const login = checkingLogin();
 
   const handleClickLogout = () => {
-    sessionStorage.removeItem("AccessToken");
-    dispatch(isLogin(false));
-    alert("로그아웃 성공");
-    navigate("/account/login");
+    mutation.mutate();
   };
-
-  useEffect(() => {}, []);
 
   return (
     <header>
@@ -41,7 +51,14 @@ function Header() {
           </div>
         ) : (
           <div className={styled.logoutCon}>
-            <button className={styled.loginBtn}>LOGIN</button>
+            <button
+              className={styled.loginBtn}
+              onClick={() => {
+                navigate("/account/login");
+              }}
+            >
+              LOGIN
+            </button>
           </div>
         )}
       </nav>

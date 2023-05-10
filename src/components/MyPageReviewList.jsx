@@ -5,8 +5,8 @@ import { getMyPageUserInfo, removeUserReview } from "../apis/mypage";
 import Update from "./Update";
 
 function MyPageReviewList() {
-
-    const queryClient = useQueryClient()
+    
+    const queryClient = useQueryClient();
 
     const { data } = useQuery("mypageuser", getMyPageUserInfo)
 
