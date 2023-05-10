@@ -11,7 +11,7 @@ function Header() {
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const mutation = useMutation(logoutAxios, {
-    onSuccese: () => {
+    onSuccess: (res) => {
       sessionStorage.removeItem("AccessToken");
       dispatch(isLogin(false));
       alert("로그아웃 처리 되었습니다.");

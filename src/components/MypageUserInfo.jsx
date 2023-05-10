@@ -5,6 +5,7 @@ import { getMyPageUserInfo } from "../apis/mypage";
 
 function MypageUserInfo() {
   const { data } = useQuery("mypageuser", getMyPageUserInfo);
+  const isArray = Array.isArray(data);
 
   return (
     <>
@@ -23,7 +24,8 @@ function MypageUserInfo() {
           </div>
           <div className={styled.detailCon}>
             <h3 className={`${styled.data} ${styled.name}`}>
-              {data && `${data[0].member.nickname}`}님의 마이페이지
+              {data && (isArray ? data[0].member.nickname : data.nickname)}님의
+              마이페이지
             </h3>
           </div>
         </div>

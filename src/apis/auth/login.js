@@ -12,8 +12,9 @@ const loginAxios = async (payload) => {
 const logoutAxios = async () => {
   try {
     const { res } = await baseURL.post("/wine/user/logout");
-    console.log(res.data.message);
-    return res.data.message;
+    // console.log(res.message);
+    // return res.message;
+    return res;
   } catch (error) {
     throw error;
   }

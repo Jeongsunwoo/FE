@@ -8,7 +8,6 @@ const checkingLogin = () => {
 };
 
 const notLoginRouting = (navigate) => {
-  console.log(checkingLogin());
   if (checkingLogin()) {
     return;
   } else {

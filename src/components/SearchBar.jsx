@@ -16,6 +16,7 @@ function SearchBar({ setWineList }) {
     { enabled: false }
   );
 
+  // 검색어가 null일 때 alert
   const handleSearchBtn = () => {
     if (!searchValue) {
       alert("검색어를 입력해주세요");
