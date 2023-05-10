@@ -14,11 +14,20 @@ const wineListAxios = async () => {
   }
 };
 
+const rankingListAxios = async () => {
+  try {
+    const { data } = await baseURL.get("/wine/rank");
+    return data.data;
+  } catch (error) {
+    console.log("랭킹리스트 에러");
+    throw error;
+  }
+};
+
 const searchWineListAxios = async (payload) => {
   try {
-    console.log("payload:", payload);
     const { data } = await baseURL.get("/wine/search", { params: payload });
-    console.log(data.data);
+
     return data.data;
   } catch (error) {
     console.log("검색리스트 에러");
@@ -26,4 +35,4 @@ const searchWineListAxios = async (payload) => {
   }
 };
 
-export { wineListAxios, searchWineListAxios };
+export { wineListAxios, searchWineListAxios, rankingListAxios };

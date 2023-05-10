@@ -16,10 +16,12 @@ function DetailPage() {
   const { id } = useParams();
   const navigate = useNavigate();
   const dispatch = useDispatch();
+
   const { isError, data } = useQuery("reviews", () =>
     wineInfoAndReviewsAxios(id)
   );
 
+  const nickName = data?.member.nickname;
   const [isModalOpen, setIsModalOpen] = useState(false);
   const modalOpenToggle = () => {
     setIsModalOpen(!isModalOpen);
@@ -31,10 +33,12 @@ function DetailPage() {
       dispatch(onFetchWineInfo(data));
     }
   }, [dispatch, data]);
+
   return (
     <>
       {isModalOpen && (
         <Posting
+          nickName={nickName}
           wineName={data?.wine.name}
           isModalOpen={modalOpenToggle}
         ></Posting>

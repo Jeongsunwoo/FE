@@ -9,7 +9,6 @@ function WineDetailPost({ wineInfo, isLike }) {
   const queryClient = useQueryClient();
   const mutation = useMutation(increaseLikeAxios, {
     onSuccess: () => {
-      console.log("좋아요 성공");
       queryClient.invalidateQueries("reviews");
     },
   });
