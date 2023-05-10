@@ -6,13 +6,14 @@ import { signUpUserAxios } from "../apis/auth/signup";
 import styled from "../styles/css/login.module.css";
 
 function Signup() {
-  const navigation = useNavigate();
+  const navigate = useNavigate();
   const [userId, setUserId] = useInput("");
   const [userPassword, setUserPassword] = useInput("");
   const [userNickName, setUserNickName] = useInput("");
 
   const addmutation = useMutation(signUpUserAxios, {
-    onSuccess: () => {},
+    onSuccess: () => {
+    },
   });
 
   const onSubmitUserHandler = (e) => {
@@ -23,16 +24,19 @@ function Signup() {
       password: userPassword,
       nickname: userNickName,
     };
-    if (userId.length == 0) {
+    if (userId.length === 0) {
       alert("ID를 입력해주세요");
-    } else if (userPassword.length == 0) {
+    } else if (userPassword.length === 0) {
       alert("PW를 입력해주세요");
-    } else if (userNickName.length == 0) {
+    } else if (userNickName.length === 0) {
       alert("닉네임을 입력해주세요");
     }
+    
+
     console.log("등록되는 회원 정보 => ", newUser);
 
     addmutation.mutate(newUser);
+    
   };
 
   return (
