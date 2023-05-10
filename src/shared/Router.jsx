@@ -25,7 +25,6 @@ function Router() {
         <Route path="/wineList/:id" element={<DetailPage />}></Route>
         <Route path="/mypage" element={<MyPage />}></Route>
       </Routes>
-      <Footer></Footer>
     </BrowserRouter>
   );
 }

@@ -13,11 +13,8 @@ function WineListPage() {
   const { isError, data } = useQuery("wine", wineListAxios);
   const [wineList, setWineList] = useState(data);
   useEffect(() => {
-    console.log("초기값");
     notLoginRouting(navigate);
     setWineList(data);
-    // 검색 후 페이지 이동시 다시 초기값으로 초기화 됨 (의존성 배열 data설정 시)
-    // 마운트 시에만 초기값으로 설정되게 변경
   }, [data]);
 
   return (

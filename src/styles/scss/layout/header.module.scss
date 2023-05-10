@@ -1,15 +1,14 @@
 @import "../base/variables";
 
 header {
-  box-shadow: $shadow3;
-
   nav {
     @include flex-space-between;
     width: 100%;
     max-width: 1200px;
-    padding: 1.5%;
+    padding: 1.5% 0;
     margin: 0 auto;
     box-sizing: border-box;
+    position: relative;
 
     a h1 {
       @include logo;
@@ -38,23 +37,26 @@ header {
       }
     }
 
-    @include flex-space-between;
-
     .loginCon,
     .logoutCon {
       display: flex;
       justify-content: end;
       align-items: center;
-      width: auto;
-      width: 500px;
+      // width: 500px;
 
-      button {
-        @include button-black;
-        width: 180px;
-        line-height: 35px;
-        border-radius: 30px;
-        margin-right: 10%;
+      .loginBtn,
+      .logoutBtn {
+        @include button-wine;
       }
+    }
+
+    button {
+      @include button-withe;
+      width: 200px;
+      font-weight: 600;
+      line-height: 40px;
+      border-radius: 30px;
+      margin-left: 30px;
     }
   }
 }
