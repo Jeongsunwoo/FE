@@ -7,7 +7,7 @@ import { getMyPageUserInfo } from '../apis/mypage';
 function MypageUserInfo() {
 
     const { data } = useQuery("mypageuser", getMyPageUserInfo)
-    
+
     return (
         <>
             <div className={styled.line}></div>
@@ -15,11 +15,11 @@ function MypageUserInfo() {
                 <div className={styled.postCon}>
                     <div className={styled.leftCon}>
                         <div className={styled.imgCon}>
-                            <img src={"https://www.omynara.com/wp-content/uploads/2018/02/wine-1543170_640.jpg"} alt="wine-image" />
+                            <img src={""} alt="wine-image" />
                         </div>
                     </div>
                     <div className={styled.detailCon}>
-                    <h3 className={`${styled.data} ${styled.name}`}>{data[0]?.member.nickname} 님의 마이페이지</h3>
+                    <h3 className={`${styled.data} ${styled.name}`}>{data && `${data[0]?.member.nickname}`} 님의 마이페이지</h3>
                     </div>
                 </div>
             </div>

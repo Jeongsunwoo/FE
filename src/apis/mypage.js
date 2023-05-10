@@ -7,23 +7,17 @@ const getMyPageUserInfo = async () => {
     return response.data.data
 }
 
-const getMyPageReviewUser = async () => {
-  const response = await baseURL.get(`/wine/mypage`)
-  console.log("response2 => ",response)
-  return response.data.data
-}
-
 const removeUserReview = async (id) => {
+  console.log("삭제 아이디 => ",id)
     await baseURL.delete(`/wine/review/${id}`)
 }
 
 const updatePost = async (updatedPost) => {
     await axios.patch(`/wine/review/${updatedPost.id}`,
         {
-          title: updatedPost.title,
-          body: updatedPost.body,
+          content: updatedPost.content,
         }
       );
     }
 
-export { getMyPageReviewUser, getMyPageUserInfo, removeUserReview, updatePost }
+export { getMyPageUserInfo, removeUserReview, updatePost }

@@ -2,7 +2,7 @@ import { baseURL } from "./axios";
 
 const wineListAxios = async () => {
   try {
-    const { data } = await baseURL.get("/wine/rank", {
+    const { data } = await baseURL.get("/wine/search/read", {
       headers: {
         "Access-Control-Allow-Origin": "*",
       },
