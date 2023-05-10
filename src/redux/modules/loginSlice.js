@@ -1,5 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { checkingLogin } from "../../hooks/useCheckingLogin";
+import { checkingLogin } from "../../apis/auth/checkingLogin";
 
 const initialState = {
   isLogin: checkingLogin(),

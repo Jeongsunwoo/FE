@@ -1,4 +1,4 @@
-import { instance } from "../axios";
+import { baseURL, instance } from "../axios";
 
 const loginAxios = async (payload) => {
   try {
@@ -9,4 +9,14 @@ const loginAxios = async (payload) => {
   }
 };
 
-export { loginAxios };
+const logoutAxios = async () => {
+  try {
+    const { res } = await baseURL.post("/wine/user/logout");
+    console.log(res.data.message);
+    return res.data.message;
+  } catch (error) {
+    throw error;
+  }
+};
+
+export { loginAxios, logoutAxios };

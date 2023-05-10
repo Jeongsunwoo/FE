@@ -12,6 +12,7 @@ function Login() {
     memberId: "",
     memberPw: "",
   };
+
   const [userInfo, handleInputsChange, resetForm] = useInputs(initialState);
   const navigate = useNavigate();
   const dispatch = useDispatch();
