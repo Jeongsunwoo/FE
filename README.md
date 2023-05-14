@@ -56,11 +56,8 @@ https://kaput-birth-81b.notion.site/S-A-b5c42c60c43c4298bd123ecd03e12de1
 
 ## 📖 ERD
 
-<!-- <div align="center"> -->
-
 ![image](https://user-images.githubusercontent.com/102853354/236878245-8fe36ff4-9e56-470a-a5f5-be1004e04489.png)
 
-<!-- </div> -->
   <br>
 
 ## 🧑‍🤝‍🧑 회원 관리 관련 기능
