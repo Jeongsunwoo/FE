@@ -48,11 +48,11 @@ https://kaput-birth-81b.notion.site/S-A-b5c42c60c43c4298bd123ecd03e12de1
 
 #### 메인 페이지
 
-<img src="./public/img/main.jpg" />
+<img src="/public/img/main.jpg" />
 
 #### 와인 리스트 페이지
 
-<img src="./public/img/wineList.jpg" />
+<img src="/public/img/wineList.jpg" />
 
 ## 📖 ERD
 
